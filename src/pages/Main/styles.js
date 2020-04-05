@@ -29,7 +29,7 @@ export const Title = styled.div`
   > h1 {
     font-weight: 600;
     color: ${white};
-    font-size: 7vh;
+    font-size: 6vh;
     text-align: left;
   }
 `;
