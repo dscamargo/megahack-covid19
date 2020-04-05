@@ -1,16 +1,18 @@
 import React from 'react';
-import { Switch } from 'react-router-dom';
-
-import Route from './route';
+import { Switch, Route } from 'react-router-dom';
 
 import Main from '~/pages/Main';
-import Login from '~/pages/Login';
+import Escolher from '~/pages/Options';
+import Registrar from '~/pages/Register';
+import Sucesso from '~/pages/Success';
 
 const Routes = () => {
   return (
     <Switch>
-      <Route path="/login" component={Login} />
-      <Route exact path="/" component={Main} isPrivate />
+      <Route exact path="/" component={Main} />
+      <Route exact path="/escolher" component={Escolher} />
+      <Route exact path="/registrar" component={Registrar} />
+      <Route exact path="/sucesso" component={Sucesso} />
     </Switch>
   );
 };

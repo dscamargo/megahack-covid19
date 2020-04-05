@@ -1,5 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
+import 'circular-std';
+
 export default createGlobalStyle`
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
   * {
@@ -11,6 +13,7 @@ export default createGlobalStyle`
 
   html,body, #root{
     min-height: 100%;
+    height: 100%;
   }
 
   body {
@@ -20,7 +23,7 @@ export default createGlobalStyle`
   body,input,button{
     color: #222;
     font-size: 14px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'CircularStd', sans-serif;
   }
 
   button {
