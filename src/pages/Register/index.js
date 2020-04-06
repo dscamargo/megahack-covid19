@@ -7,6 +7,41 @@ import { Container, Section } from './styles';
 import Button from '~/components/Button';
 import Input from '~/components/Input';
 import TextArea from '~/components/TextArea';
+import MaskedInput from '~/components/MaskedInput';
+
+const mask = [
+  '(',
+  /[1-9]/,
+  /\d/,
+  ')',
+  ' ',
+  /\d/,
+  /\d/,
+  /\d/,
+  /\d/,
+  '-',
+  /\d/,
+  /\d/,
+  /\d/,
+  /\d/,
+];
+const nineDigitMask = [
+  '(',
+  /[1-9]/,
+  /\d/,
+  ')',
+  ' ',
+  /\d/,
+  /\d/,
+  /\d/,
+  /\d/,
+  /\d/,
+  '-',
+  /\d/,
+  /\d/,
+  /\d/,
+  /\d/,
+];
 
 export default function Register({ history }) {
   const [email, setEmail] = useState('');
@@ -14,10 +49,22 @@ export default function Register({ history }) {
   const [phone, setPhone] = useState('');
   const [address, setAddress] = useState('');
 
+  function somenteNumeros(s) {
+    return s && s.replace(/[^0-9]/g, '');
+  }
+
+  function handleChangeMask(rawValue) {
+    const formatted = somenteNumeros(rawValue);
+    if (formatted.length > 10) {
+      return nineDigitMask;
+    }
+    return mask;
+  }
+
   function handleSubmit(e) {
     e.preventDefault();
 
-    console.log({ email, skills, phone, address });
+    // console.log({ email, skills, phone: somenteNumeros(phone), address });
 
     history.push('/sucesso');
   }
@@ -41,12 +88,13 @@ export default function Register({ history }) {
             width="500px"
             label="E-mail"
           />
-          <Input
-            type="text"
+          <MaskedInput
+            onChange={e => setPhone(e.target.value)}
             value={phone}
             setValue={setPhone}
-            width="500px"
+            mask={handleChangeMask}
             label="Telefone"
+            width="500px"
           />
           <Input
             type="text"
