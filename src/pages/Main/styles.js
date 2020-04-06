@@ -53,8 +53,8 @@ export const ImageContainer = styled.section`
 
   > img {
     position: absolute;
-    top: -69px;
-    width: 80%;
+    top: -68px;
+    width: 90%;
     height: 115%;
   }
 `;
