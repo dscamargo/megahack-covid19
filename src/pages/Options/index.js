@@ -27,7 +27,7 @@ export default function Options({ history }) {
             fontColor={purple}
             onClick={() => history.push('/registrar')}
           >
-            Inscreva-se
+            <span>Inscreva-se</span>
           </Button>
         </Item>
         <Item>
@@ -47,7 +47,7 @@ export default function Options({ history }) {
             borderColor={purple}
             fontColor={purple}
           >
-            Procurar
+            <span>Procurar</span>
           </Button>
         </Item>
       </ItemsContainer>

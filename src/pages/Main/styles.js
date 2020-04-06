@@ -7,7 +7,7 @@ export const Container = styled.div`
   background: ${purple};
   width: 100%;
   height: 100%;
-  overflow: auto;
+  overflow: hidden;
 `;
 
 export const TextContainer = styled.section`
@@ -19,7 +19,7 @@ export const TextContainer = styled.section`
 
 export const Text = styled.div`
   width: 90%;
-  padding: 20px 0;
+  padding: 20px 40px;
 `;
 
 export const Title = styled.div`
@@ -46,5 +46,15 @@ export const Resume = styled.div`
 
 export const ImageContainer = styled.section`
   width: 50%;
-  background: ${white};
+  background: ${purple};
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+
+  > img {
+    position: absolute;
+    top: -69px;
+    width: 80%;
+    height: 115%;
+  }
 `;

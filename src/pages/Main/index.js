@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import BackgroundImage from './assets/MainBanner.png';
+
 import Button from '~/components/Button';
 
 import {
@@ -28,11 +30,14 @@ export default function Main({ history }) {
             </span>
           </Resume>
           <Button onClick={() => history.push('/escolher')} width="215px">
-            Cadastrar
+            <span>Cadastre-se</span>
           </Button>
         </Text>
       </TextContainer>
-      <ImageContainer />
+      <ImageContainer>
+        <img src={BackgroundImage} alt="Banner Inicial" />
+      </ImageContainer>
+      <div style={{ width: 0.5 }} />
     </Container>
   );
 }

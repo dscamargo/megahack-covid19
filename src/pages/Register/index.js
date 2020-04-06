@@ -71,7 +71,7 @@ export default function Register({ history }) {
             width="150px"
             height="60px"
           >
-            Enviar
+            <span>Enviar</span>
           </Button>
         </form>
       </Section>

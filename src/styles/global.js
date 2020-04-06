@@ -28,6 +28,10 @@ export default createGlobalStyle`
 
   button {
     cursor: pointer;
+
+    > span {
+      font-weight: 600
+    }
   }
 
 `;
