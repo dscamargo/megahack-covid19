@@ -26,6 +26,10 @@ export default createGlobalStyle`
     font-family: 'CircularStd', sans-serif;
   }
 
+  textarea{
+    font-family: 'CircularStd', sans-serif;
+  }
+
   button {
     cursor: pointer;
 
