@@ -23,9 +23,10 @@ export const Container = styled.div`
 export const Label = styled.span`
   width: auto;
   background: ${white};
+  padding: 0 5px;
   color: ${purple};
   position: absolute;
-  top: ${props => (props.haveValue || props.isFocused ? -5 : 14)}px;
+  top: ${props => (props.haveValue || props.isFocused ? -7 : 14)}px;
   left: ${props => (props.haveValue || props.isFocused ? 14 : 14)}px;
   transition: 0.4s;
 `;
