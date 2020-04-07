@@ -31,9 +31,15 @@ export const Section = styled.section`
 
   > form {
     margin-bottom: 20px;
+    width: 500px;
 
     > div {
       margin-bottom: 20px;
     }
   }
+`;
+
+export const InputsRow = styled.div`
+  display: flex;
+  justify-content: space-between;
 `;

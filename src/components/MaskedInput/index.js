@@ -49,7 +49,7 @@ Input.propTypes = {
   value: PropTypes.string,
   setValue: PropTypes.func,
   label: PropTypes.string,
-  mask: PropTypes.func.isRequired,
+  mask: PropTypes.oneOfType([PropTypes.array, PropTypes.func]).isRequired,
 };
 
 Input.defaultProps = {

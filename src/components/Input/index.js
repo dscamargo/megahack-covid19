@@ -23,6 +23,7 @@ export default function Input({
   return (
     <Container width={width} {...props}>
       <input
+        {...props}
         type={type}
         value={value}
         onChange={e => setValue(e.target.value)}
