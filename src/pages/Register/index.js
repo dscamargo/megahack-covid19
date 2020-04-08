@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 
+import api from '~/services/api';
+
 import { white, purple } from '~/styles/colors';
 
 import { nineDigitMask, normalMask, zipcodeMask } from '~/utils/mask';
@@ -11,8 +13,10 @@ import Button from '~/components/Button';
 import Input from '~/components/Input';
 import TextArea from '~/components/TextArea';
 import MaskedInput from '~/components/MaskedInput';
+import Loading from '~/components/Loading';
 
 export default function Register({ history }) {
+  const [loading, setLoading] = useState(false);
   const [complement, setComplement] = useState('');
   const [email, setEmail] = useState('');
   const [skills, setSkills] = useState('');
@@ -58,20 +62,27 @@ export default function Register({ history }) {
     return normalMask;
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
 
-    // console.log({
-    //   email,
-    //   zipcode: somenteNumeros(zipcode),
-    //   city,
-    //   state,
-    //   district,
-    //   number,
-    //   skills,
-    //   complement,
-    //   phone: somenteNumeros(phone),
-    // });
+    const data = {
+      email,
+      address: {
+        zipcode: somenteNumeros(zipcode),
+        city,
+        state,
+        district,
+        number,
+        complement,
+        street,
+      },
+      services: skills,
+      phone: somenteNumeros(phone),
+    };
+
+    setLoading(true);
+    await api.post('/users', data);
+    setLoading(false);
 
     history.push('/sucesso');
   }
@@ -174,7 +185,7 @@ export default function Register({ history }) {
             width="150px"
             height="60px"
           >
-            <span>Enviar</span>
+            {loading ? <Loading /> : <span>Enviar</span>}
           </Button>
         </form>
       </Section>

@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import 'circular-std';
 
 export default createGlobalStyle`
