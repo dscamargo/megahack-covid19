@@ -177,7 +177,7 @@ export default function Register({ history }) {
               label="Quais habilidades você gostaria de compartilhar?"
             />
             <span>
-              * Insira suas habilidades separadas por ponto e vírgula.
+              * Insira suas habilidades separadas por ponto e vírgula(;).
             </span>
           </InputContainer>
           <Button
