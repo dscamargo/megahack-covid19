@@ -13,6 +13,7 @@ import TextArea from '~/components/TextArea';
 import MaskedInput from '~/components/MaskedInput';
 
 export default function Register({ history }) {
+  const [complement, setComplement] = useState('');
   const [email, setEmail] = useState('');
   const [skills, setSkills] = useState('');
   const [phone, setPhone] = useState('');
@@ -60,16 +61,17 @@ export default function Register({ history }) {
   function handleSubmit(e) {
     e.preventDefault();
 
-    console.log({
-      email,
-      zipcode: somenteNumeros(zipcode),
-      city,
-      state,
-      district,
-      number,
-      skills,
-      phone: somenteNumeros(phone),
-    });
+    // console.log({
+    //   email,
+    //   zipcode: somenteNumeros(zipcode),
+    //   city,
+    //   state,
+    //   district,
+    //   number,
+    //   skills,
+    //   complement,
+    //   phone: somenteNumeros(phone),
+    // });
 
     history.push('/sucesso');
   }
@@ -148,6 +150,13 @@ export default function Register({ history }) {
             setValue={setStreet}
             width="100%"
             label="Rua"
+          />
+          <Input
+            type="text"
+            value={complement}
+            setValue={setComplement}
+            width="100%"
+            label="Complemento"
           />
           <TextArea
             value={skills}
