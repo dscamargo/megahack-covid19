@@ -43,3 +43,10 @@ export const InputsRow = styled.div`
   display: flex;
   justify-content: space-between;
 `;
+
+export const InputContainer = styled.div`
+  > span {
+    font-size: 10px;
+    color: red;
+  }
+`;

@@ -8,10 +8,9 @@ import { white, purple } from '~/styles/colors';
 
 import { nineDigitMask, normalMask, zipcodeMask } from '~/utils/mask';
 
-import { Container, Section, InputsRow } from './styles';
+import { Container, Section, InputsRow, InputContainer } from './styles';
 import Button from '~/components/Button';
 import Input from '~/components/Input';
-import TextArea from '~/components/TextArea';
 import MaskedInput from '~/components/MaskedInput';
 import Loading from '~/components/Loading';
 
@@ -169,12 +168,18 @@ export default function Register({ history }) {
             width="100%"
             label="Complemento"
           />
-          <TextArea
-            value={skills}
-            setValue={setSkills}
-            width="100%"
-            label="Quais habilidades você gostaria de compartilhar?"
-          />
+          <InputContainer>
+            <Input
+              type="text"
+              value={skills}
+              setValue={setSkills}
+              width="100%"
+              label="Quais habilidades você gostaria de compartilhar?"
+            />
+            <span>
+              * Insira suas habilidades separadas por ponto e vírgula.
+            </span>
+          </InputContainer>
           <Button
             type="submit"
             background={white}
