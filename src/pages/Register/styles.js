@@ -46,7 +46,7 @@ export const InputsRow = styled.div`
 
 export const InputContainer = styled.div`
   > span {
-    font-size: 10px;
+    font-size: 12px;
     color: red;
   }
 `;
